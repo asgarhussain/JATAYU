@@ -19,14 +19,111 @@
    <!--  <link href="{{ url_for('static',filename='fonts/material-icon/css/material-design-iconic-font.min.css' )}}" rel="stylesheet" >
 
     Main css 
-     <link  href="{{ url_for('static', filename='css/style.css' )}}"  rel="stylesheet" >-->
+     <link  href="{{ url_for('static', filename='css/style.css' )}}"  rel="stylesheet" >
 
-<!--    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
     
     <link href="{{ url_for('static', filename='theme.css') }}" rel="stylesheet">-->
+<style>
+
+.button {
+  background-color: #008CBA; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 12px;
+  margin: 40px 180px;
+
+
+}
+
+.button1:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 12px;
+  margin: 40px -120px;
+
+
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+
+
+div#loading {
+display: none;
+  width: 500px;
+  height:180px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+  background: url(/static/Vanilla-2s-289px.gif) no-repeat;
+ position: absolute;
+  cursor: wait;
+ 
+}
+
+
+
+
+</style>
+
+
+
   </head>
 
   <body>
+    <div id="loading">   </div>
+   <!-- <div id="geeks"> 
+      <span>s</span> 
+      <span>g</span> 
+      <span>R</span> 
+      <span>N</span> 
+      <span>A</span> 
+      <span>D</span> 
+      <span>E</span> 
+      <span>S</span> 
+      <span>I</span> 
+      <span>G</span> 
+      <span>N</span> 
+      <span>I</span> 
+      <span>N</span>
+      <span>P</span>
+      <span>R</span>
+      <span>O</span>
+      <span>C</span>
+      <span>E</span>
+      <span>S</span>
+      <span>S</span>
+            
+      
+  </div> -->
+
     <div class="main">
 
       <div class="container">
@@ -126,16 +223,31 @@
                   
                   <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                      <button type="reset" class="btn btn-default">Cancel</button>
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="reset"  class="button button1">Reset</button>
+                      <button type="submit" class="button button2" onclick="loading();" >Design sgRNA</button>
                     </div>
                   </div>
                 </fieldset>
+                <h2 style="color: red;font-size: 21px;font-weight: bold; font-family: Poppins;padding-bottom: 5px;padding-top: 100px;">Instructions : </h2>
+                <p style="color: blue;font-size: 18px;font-weight: bold; font-family: Poppins;">1. Users need to provide human genomic sequences. </p>
+                <p style="color: blue;font-size: 18px;font-weight: bold; font-family: Poppins;">2. The mutation position should be followed by NNGG (N=Any Nucleotide). </p>
+ 
               </form>
             </div>
           </div>
 
     </div> <!-- /container -->
+
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+
+    <script type="text/javascript">// <![CDATA[
+      function loading(){
+        $("#loading").show();
+
+
+          $("#main").hide();       
+      }
+// ]]></script>
 
   </body>
 </html>

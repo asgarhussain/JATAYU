@@ -9,15 +9,70 @@
     <title>JATAYU</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="/static/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <!--<link rel="stylesheet" href="/static/fonts/material-icon/css/material-design-iconic-font.min.css">-->
 
     <!-- Main css -->
    
-   
- <link rel=stylesheet href="{{ url_for('static', filename='style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='fonts/material-icon/css/material-design-iconic-font.min.css') }}">
 
-   <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+ <link rel=stylesheet href="{{ url_for('static', filename='css/style.css') }}">
 
+ <!--  <link rel="stylesheet" href="/static/css/style.css"> -->
+<style>
+
+table.dataframe, .dataframe th, .dataframe td {
+    border:1px solid ;
+    border-bottom: 1px solid #C8C8C8;
+    border-collapse: collapse;
+    text-align:left;
+    padding: 10px;
+    margin-bottom: 40px;
+    font-size: 0.9em;
+}
+
+
+.sgrna th  {
+background-color: #77dd77;
+color: #999;
+}
+
+.sgrna td  {
+color: blue;
+}
+
+.primer th {
+background-color: #77dd77;
+color: #999;
+}
+
+.primer td {
+
+color: blue;
+}
+
+tr:nth-child(odd)		{ background-color:#eee; }
+tr:nth-child(even)	{ background-color:#fff; }
+
+.primer tbody>tr>:nth-child(3),.primer tbody>tr>:nth-child(4){
+ color:goldenrod;
+
+}
+
+
+.primer tbody>tr>:nth-child(1),.primer tbody>tr>:nth-child(2)   {
+ color:violet;
+
+}
+
+
+
+
+tr:hover            { background-color: #ffff99;}
+
+
+
+
+</style>
   </head>
 
   <body>
@@ -69,7 +124,9 @@
           <h2 style="color: #377ba8;margin: 0;font-size: 1.2em;padding-bottom: 5px;">{{titles[loop.index]}}</h2>
           {{ table|safe }}
             <!-- <h4 style="color:blue;">   </h4>-->
-                   {% endfor %}
+                   
+            {% endfor %}
+             <p style="color: red;"> Select any primer set from the above table.  </p>   
           </div>         
     </div> <!--signup-content -->
     </div> <!-- /container -->
@@ -83,7 +140,9 @@
       var posi1 = {{ position|tojson }};
       var mutation = {{ variation_base|tojson }};
       var ref=sequence2.substr(posi1-1, 1);
+      var muta_type = ref.fontcolor("blue") + ">".fontcolor("black") + mutation.fontcolor("red");
       sequence2 = sequence2.substr(0, posi1-1) + mutation.fontcolor("red") + sequence2.substr(posi1-1 + 1);
+      $("#Mutation").html(muta_type);
       $("#muatated").html(sequence2);
 
   
