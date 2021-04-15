@@ -445,28 +445,6 @@ input {
       text-decoration: none; }
 
 
-table.dataframe, .dataframe th, .dataframe td {
-        border:2px solid black;
-        border-bottom: 1px solid #C8C8C8;
-        border-collapse: collapse;
-        text-align:left;
-        padding: 10px;
-        margin-bottom: 40px;
-        font-size: 0.9em;
-}
-
-
-.sgRNA th {
-  background-color: #222;
-  color: blue;
-}
-
-.Primers th {
-  background-color: #77dd77;
-  color: blue;
-}
-
-tr:hover            { background-color: #ffff99;}
 
 .steps {
   display: none; }
